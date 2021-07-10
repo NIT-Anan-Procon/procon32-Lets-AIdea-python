@@ -1,12 +1,12 @@
 # procon32_Lets_AIdea_python
-Eƒ[ƒJƒ‹‚Å‚Ìimage captioningÀs•û–@
-1. ‚±‚ÌƒŠƒ|ƒWƒgƒŠ‚ğƒNƒ[ƒ“
-2. pytorch-tutorial/tutorials/03-advanced/image_captioning/‚ÉˆÚ“®
-3. pip install -r requirements.txt‚ğÀs
-4. python sample.py --image=png/example.png‚ğÀs(example.png‚ÍD‚«‚È‰æ‘œ‚ğ“ü‚ê‚é)
+ãƒ»ãƒ­ãƒ¼ã‚«ãƒ«ã§ã®image captioningå®Ÿè¡Œæ–¹æ³•
+1. ã“ã®ãƒªãƒã‚¸ãƒˆãƒªã‚’ã‚¯ãƒ­ãƒ¼ãƒ³
+2. pytorch-tutorial/tutorials/03-advanced/image_captioning/ã«ç§»å‹•
+3. pip install -r requirements.txtã‚’å®Ÿè¡Œ
+4. python sample.py --image=png/example.pngã‚’å®Ÿè¡Œ(example.pngã¯å¥½ããªç”»åƒã‚’å…¥ã‚Œã‚‹)
 
-ƒGƒ‰[‚ªo‚½ê‡‚ÍˆÈ‰º‚Ì‚æ‚¤‚ÈƒTƒCƒg‚ğƒ`ƒFƒbƒN‚·‚é
-pycocoapi ƒrƒ‹ƒh                  Fhttps://qiita.com/funatsufumiya/items/049fc600f13b24ea8633
-pycocotools/_mask.c ‚ªŒ©‚Â‚©‚ç‚È‚¢Fhttps://cocoinit23.com/no-such-file-or-directory-pycocotools-_mask-c/
-pip‚Åproxy                        Fhttps://qiita.com/samunohito/items/40a03e1464899225e698
-import torchƒGƒ‰[                Fhttps://trend-tracer.com/pytorch/
+ã‚¨ãƒ©ãƒ¼ãŒå‡ºãŸå ´åˆã¯ä»¥ä¸‹ã®ã‚ˆã†ãªã‚µã‚¤ãƒˆã‚’ãƒã‚§ãƒƒã‚¯ã™ã‚‹\n
+pycocoapi ãƒ“ãƒ«ãƒ‰                  ï¼šhttps://qiita.com/funatsufumiya/items/049fc600f13b24ea8633
+pycocotools/_mask.c ãŒè¦‹ã¤ã‹ã‚‰ãªã„ï¼šhttps://cocoinit23.com/no-such-file-or-directory-pycocotools-_mask-c/
+pipã§proxy                        ï¼šhttps://qiita.com/samunohito/items/40a03e1464899225e698
+import torchã‚¨ãƒ©ãƒ¼                ï¼šhttps://trend-tracer.com/pytorch/
