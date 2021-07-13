@@ -8,8 +8,6 @@ from torchvision import transforms
 from build_vocab import Vocabulary
 from model import EncoderCNN, DecoderRNN
 from PIL import Image
-os.environ['http_proxy'] = 'http://proxy.anan-nct.ac.jp:8080/'
-os.environ['https_proxy'] = 'http://proxy.anan-nct.ac.jp:8080/'
 
 # Device configuration
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
