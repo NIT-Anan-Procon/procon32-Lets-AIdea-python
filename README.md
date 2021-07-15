@@ -1,5 +1,6 @@
 # procon32_Lets_AIdea_python
-Python==3.9.6
+## 開発環境
+- Python 3.9.6
 
 ・ローカルでのimage captioning実行方法
 
