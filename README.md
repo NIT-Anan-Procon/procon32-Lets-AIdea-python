@@ -19,8 +19,8 @@ https://visualstudio.microsoft.com/ja/downloads/
 ・インストールの詳細：MSVC v140(さらにエラーが出るようならこれも追加)  
 - pipコマンド実行時に、WARNING：HTTPSConnection.が出て失敗した場合は、  
     ```
-    set HTTP_PROXY=http://proxy.anan-nct.ac.jp:8080
-    set HTTPS_PROXY=http://proxy.anan-nct.ac.jp:8080
-    pip install -r requirements.txt --proxy http://proxy.anan-nct.ac.jp:8080
+    set HTTP_PROXY=プロキシのホスト名:ポート
+    set HTTPS_PROXY=プロキシのホスト名:ポート
+    pip install -r requirements.txt --proxy プロキシのホスト名:ポート
     ```
     に変更する。
