@@ -2,7 +2,7 @@
 ## 開発環境
 - Python 3.9.6
 
-・ローカルでのimage captioning実行方法
+## ローカルでのimage captioning実行方法
 
 ```
 pip install -r requirements.txt  
