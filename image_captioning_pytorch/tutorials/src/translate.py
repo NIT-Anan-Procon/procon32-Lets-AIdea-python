@@ -30,7 +30,10 @@ p = argparse.ArgumentParser()
 #args = p.parse_args()
 
 
-def translate(text, s_lang='', t_lang='JA'):
+
+def translate(text):
+    s_lang=''
+    t_lang='JA'
     headers = {
         'Content-Type': 'application/x-www-form-urlencoded; utf-8'
     }
@@ -54,11 +57,14 @@ def translate(text, s_lang='', t_lang='JA'):
     try:
         with urllib.request.urlopen(req) as res:
             res_json = json.loads(res.read().decode('utf-8'))
+            #print(res_json.pop('translations'))
+            #print(type(res_json.pop('translations')))
+            #print(res_json[62:-4])
             print(json.dumps(res_json, indent=2, ensure_ascii=False))
     except urllib.error.HTTPError as e:
         print(e)
 
-
+"""
 if __name__ == '__main__':
 	t_lang ='JA'
 	s_lang =''
@@ -80,3 +86,4 @@ if __name__ == '__main__':
 		s_lang = ''
 
 	translate(text, t_lang=t_lang, s_lang=s_lang)
+"""
