@@ -50,7 +50,7 @@ def main(args):
     # Generate an caption from the image
     feature = encoder(image_tensor)
     sampled_ids = decoder.sample(feature)
-    sampled_ids = sampled_ids[0].cpu().numpy()          # (1, max_seq_length) -> (max_seq_length)
+    sampled_ids = sampled_ids[0].cpu().numpy()  # (1, max_seq_length) -> (max_seq_length)
     
     # Convert word_ids to words
     sampled_caption = []
