@@ -60,7 +60,8 @@ def translate(text):
             #print(res_json.pop('translations'))
             #print(type(res_json.pop('translations')))
             #print(res_json[62:-4])
-            print(json.dumps(res_json, indent=2, ensure_ascii=False))
+            s=str(res_json)
+            print(s[62:-4])
     except urllib.error.HTTPError as e:
         print(e)
 
