@@ -63,7 +63,6 @@ def main(args):
     
     # Print out the image and the generated caption
     translate.translate(sentence[8:-6])
-    #print(sentence[8:-6])
     image = Image.open(args.image)
     plt.imshow(np.asarray(image))
     
