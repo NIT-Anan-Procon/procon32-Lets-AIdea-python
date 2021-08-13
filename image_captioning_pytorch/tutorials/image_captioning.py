@@ -4,6 +4,7 @@ import numpy as np
 import argparse
 import pickle 
 import os
+from src import translate
 from torchvision import transforms 
 from build_vocab import Vocabulary
 from model import EncoderCNN, DecoderRNN
@@ -49,7 +50,7 @@ def main(args):
     # Generate an caption from the image
     feature = encoder(image_tensor)
     sampled_ids = decoder.sample(feature)
-    sampled_ids = sampled_ids[0].cpu().numpy()          # (1, max_seq_length) -> (max_seq_length)
+    sampled_ids = sampled_ids[0].cpu().numpy()  # (1, max_seq_length) -> (max_seq_length)
     
     # Convert word_ids to words
     sampled_caption = []
@@ -61,7 +62,7 @@ def main(args):
     sentence = ' '.join(sampled_caption)
     
     # Print out the image and the generated caption
-    print (sentence)
+    translate.translate(sentence[8:-6])
     image = Image.open(args.image)
     plt.imshow(np.asarray(image))
     
