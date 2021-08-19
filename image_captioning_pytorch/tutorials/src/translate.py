@@ -4,6 +4,10 @@ import os
 import sys
 import urllib.parse
 import urllib.request
+from janome.tokenizer import Tokenizer
+from janome.analyzer import Analyzer
+from janome.tokenfilter import CompoundNounFilter
+from janome.tokenfilter import POSStopFilter
 
 with open(os.path.dirname(os.path.abspath(__file__)) + '/../config.json', encoding='utf_8_sig') as j:
     config = json.load(j)
@@ -37,7 +41,8 @@ def translate(text):
     try:
         with urllib.request.urlopen(req) as res:
             res_json = json.loads(res.read().decode('utf-8'))
-            s=str(res_json)
-            print(s[62:-4])
+            sentence_bef = str(res_json)
+            sentence_aft = sentence_bef[62:-4]
+            return sentence_aft
     except urllib.error.HTTPError as e:
         print(e)
