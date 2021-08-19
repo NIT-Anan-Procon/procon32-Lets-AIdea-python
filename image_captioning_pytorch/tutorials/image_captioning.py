@@ -4,7 +4,7 @@ import numpy as np
 import argparse
 import pickle 
 import os
-from src import translate
+from src import NGword
 from torchvision import transforms 
 from build_vocab import Vocabulary
 from model import EncoderCNN, DecoderRNN
@@ -62,7 +62,7 @@ def main(args):
     sentence = ' '.join(sampled_caption)
     
     # Print out the image and the generated caption
-    translate.translate(sentence[8:-6])
+    NGword.NGword(sentence[8:-6])
     image = Image.open(args.image)
     plt.imshow(np.asarray(image))
     
