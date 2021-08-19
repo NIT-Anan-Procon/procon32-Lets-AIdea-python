@@ -38,11 +38,4 @@ def translate(text):
 		headers=headers
 	)
 
-	try:
-		with urllib.request.urlopen(req) as res:
-			res_json = json.loads(res.read().decode('utf-8'))
-			sentence_bef = str(res_json)
-			sentence_aft = sentence_bef[62:-4]
-			return sentence_aft
-	except urllib.error.HTTPError as e:
-		print(e)
+
