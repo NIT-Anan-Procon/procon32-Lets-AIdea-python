@@ -7,7 +7,6 @@ from src import translate
 def NGword(text):
 	words=[]
 	sentence = translate.translate(text)
-	
 	tokenizer = Tokenizer()
 	a = Analyzer(token_filters=[CompoundNounFilter(), POSKeepFilter(["名詞","形容詞"])])
 
