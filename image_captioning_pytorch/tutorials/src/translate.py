@@ -4,9 +4,13 @@ import os
 import sys
 import urllib.parse
 import urllib.request
+from janome.tokenizer import Tokenizer
+from janome.analyzer import Analyzer
+from janome.tokenfilter import CompoundNounFilter
+from janome.tokenfilter import POSStopFilter
 
 with open(os.path.dirname(os.path.abspath(__file__)) + '/../config.json', encoding='utf_8_sig') as j:
-		config = json.load(j)
+	config = json.load(j)
 
 AUTH_KEY = config['auth_key']
 DEEPL_TRANSLATE_EP = 'https://api.deepl.com/v2/translate'

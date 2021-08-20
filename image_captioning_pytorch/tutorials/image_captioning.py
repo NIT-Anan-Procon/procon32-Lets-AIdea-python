@@ -43,29 +43,29 @@ def main(args):
 	encoder.load_state_dict(torch.load(args.encoder_path))
 	decoder.load_state_dict(torch.load(args.decoder_path))
 
-	# Prepare an image
-	image = load_image(args.image, transform)
-	image_tensor = image.to(device)
-	
-	# Generate an caption from the image
-	feature = encoder(image_tensor)
-	sampled_ids = decoder.sample(feature)
-	sampled_ids = sampled_ids[0].cpu().numpy()  # (1, max_seq_length) -> (max_seq_length)
-	
-	# Convert word_ids to words
-	sampled_caption = []
-	for word_id in sampled_ids:
-		word = vocab.idx2word[word_id]
-		sampled_caption.append(word)
-		if word == '<end>':
-			break
-	sentence = ' '.join(sampled_caption)
-	
-	# Print out the image and the generated caption
-	NGword.NGword(sentence[8:-6])
-	image = Image.open(args.image)
-	plt.imshow(np.asarray(image))
-	
+    # Prepare an image
+    image = load_image(args.image, transform)
+    image_tensor = image.to(device)
+    
+    # Generate an caption from the image
+    feature = encoder(image_tensor)
+    sampled_ids = decoder.sample(feature)
+    sampled_ids = sampled_ids[0].cpu().numpy()  # (1, max_seq_length) -> (max_seq_length)
+    
+    # Convert word_ids to words
+    sampled_caption = []
+    for word_id in sampled_ids:
+        word = vocab.idx2word[word_id]
+        sampled_caption.append(word)
+        if word == '<end>':
+            break
+    sentence = ' '.join(sampled_caption)
+    
+    # Print out the image and the generated caption
+    NGword.NGword(sentence[8:-6])
+    image = Image.open(args.image)
+    plt.imshow(np.asarray(image))
+    
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser()
 	parser.add_argument('--image', type=str, required=True, help='input image for generating caption')
