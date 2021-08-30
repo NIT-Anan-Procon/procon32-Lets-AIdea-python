@@ -2,8 +2,6 @@ SHELL=/bin/bash
 
 .PHONY: setup
 setup:
-	@python3 -m venv venv
-	@direnv allow
 	@pip3 install wheel
 	@pip3 install -r requirements.txt --no-warn-script-location
 	@mkdir -p image_captioning_pytorch/tutorials/models
