@@ -9,6 +9,8 @@ from datasets import coco, utils
 from configuration import Config
 import os
 
+from src import NGword
+
 parser = argparse.ArgumentParser(description='Image Captioning')
 parser.add_argument('--path', type=str, help='path to image', required=True)
 parser.add_argument('--v', type=str, help='version', default='v3')
@@ -82,4 +84,4 @@ def evaluate():
 output = evaluate()
 result = tokenizer.decode(output[0].tolist(), skip_special_tokens=True)
 #result = tokenizer.decode(output[0], skip_special_tokens=True)
-print(result.capitalize())
+print(NGword.NGword(result.capitalize(),0))
