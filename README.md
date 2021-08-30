@@ -1,8 +1,8 @@
 # procon32_Lets_AIdea_python
 
 ## 開発環境
-Python 3.9.6
-
+- Python 3.9.6
+- Python 3.8.10(開発サーバー)
 ## 使い方
 
 - ローカル
@@ -32,17 +32,18 @@ direnv allow
 
 ## 実行方法
 
+- ローカル
+
 ```
-cd image_captioning_pytorch/tutorials  
+cd image_captioning_pytorch/tutorials
 python image_captioning.py --image=png/example.png 
 ```
 
-## ローカルでのimage captioning実行方法
+- 開発サーバー(Ubuntu)
 
 ```
-pip install -r requirements.txt  
-cd image_captioning_pytorch/tutorials  
-python sample.py --image=png/example.png  
+cd image_captioning_pytorch/tutorials
+python3 image_captioning.py --image=png/example.png 
 ```
 
 ## エラー対処  
@@ -52,7 +53,7 @@ python sample.py --image=png/example.png
     - デスクトップとモバイル：C++ Build Tools  
     - インストールの詳細：MSVC v140(さらにエラーが出るようならこれも追加)  
 
-- pipコマンド実行時に、WARNING：HTTPSConnection.が出て失敗した場合は、 以下に変更する 
+- pipコマンド実行時に `WARNING：HTTPS Connection. `が出て失敗した場合は、 以下に変更する 
 ```
 set HTTP_PROXY=プロキシのホスト名:ポート
 set HTTPS_PROXY=プロキシのホスト名:ポート
