@@ -3,6 +3,7 @@
 ## 開発環境
 - Python 3.9.6
 - Python 3.8.10(開発サーバー)
+  - pip3 20.0.2
 ## 使い方
 
 - ローカル
@@ -19,8 +20,7 @@ source venv/bin/activate
 ```
 git clone https://github.com/NIT-Anan-Procon/procon32_Lets_AIdea_python.git
 cd procon32_Lets_AIdea_python
-python3 -m venv venv
-direnv allow
+make setup
 ```
 
 ## 実行準備
