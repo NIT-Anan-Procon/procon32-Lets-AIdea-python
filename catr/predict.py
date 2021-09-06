@@ -84,4 +84,4 @@ def evaluate():
 output = evaluate()
 result = tokenizer.decode(output[0].tolist(), skip_special_tokens=True)
 #result = tokenizer.decode(output[0], skip_special_tokens=True)
-print(NGword.NGword(result.capitalize(),0))
+print(NGword.NGword(result.capitalize(),1))
