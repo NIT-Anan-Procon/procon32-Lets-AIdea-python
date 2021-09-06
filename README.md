@@ -22,33 +22,31 @@ git clone https://github.com/NIT-Anan-Procon/procon32_Lets_AIdea_python.git
 cd procon32_Lets_AIdea_python
 python3 -m venv venv
 direnv allow
-make setup
+mkdir $HOME/tmp
+export TMPDIR=$HOME/tmp
+pip3 install wheel
+pip3 install -r requirements.txt
 ```
 
 ## 実行準備
 
-> 開発サーバーは `make setup` で実行済み
-
-1. 以下のサイトから `decoder-5-3000.pkl` , `encoder-5-3000.pkl` が入ったzipファイルと `vocab.pkl` が入ったzipファイルをダウンロードして展開する。
-  - https://www.dropbox.com/s/ne0ixz5d58ccbbz/pretrained_model.zip?dl=0
-  - https://www.dropbox.com/s/26adb7y9m98uisa/vocap.zip?dl=0
-2. `decoder-5-3000.pkl` , `encoder-5-3000.pkl` を `image_captioning_pytorch\tutorials\models` に移動させる。
-3. `vocab.pkl` を `image_captioning_pytorch\tutorials\data` に移動させる。
+procon32_Lets_AIdea_python\catrにconfig.jsonを追加
+中身のコードはPython班に聞いてください
 
 ## 実行方法
 
 - ローカル
 
 ```
-cd image_captioning_pytorch/tutorials
-python image_captioning.py --image=png/example.png 
+cd catr
+python predict.py --path png/image.png --v v3
 ```
 
 - 開発サーバー(Ubuntu)
 
 ```
-cd image_captioning_pytorch/tutorials
-python3 image_captioning.py --image=png/example.png 
+cd catr
+python3 predict.py --path png/image.png --v v3
 ```
 
 ## エラー対処  
