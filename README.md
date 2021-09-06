@@ -27,7 +27,8 @@ make setup
 
 ## 実行準備
 
-特になし
+procon32_Lets_AIdea_python\catrにconfig.jsonを追加
+中身のコードはPython班に聞いてください
 
 ## 実行方法
 
