@@ -22,7 +22,10 @@ git clone https://github.com/NIT-Anan-Procon/procon32_Lets_AIdea_python.git
 cd procon32_Lets_AIdea_python
 python3 -m venv venv
 direnv allow
-make setup
+mkdir $HOME/tmp
+export TMPDIR=$HOME/tmp
+pip3 install wheel
+pip3 install -r requirements.txt
 ```
 
 ## 実行準備
