@@ -1,4 +1,4 @@
-GET http://localhost:8080/NGword HTTP/1.1
+GET http://localhost:5000/~kurabuchi/procon32_Lets_AIdea_python/API/connect.py HTTP/1.1
 content-type: application/json
 
 {
