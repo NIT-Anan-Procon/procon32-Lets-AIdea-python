@@ -34,6 +34,7 @@ def NGword(text,lang):
 				number = "NGword" + (str)(i)
 				words[number] = word
 
+	words["sentence"] = sentence
 
 	return words
 
