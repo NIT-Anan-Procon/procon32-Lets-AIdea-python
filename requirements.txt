@@ -5,3 +5,4 @@ transformers
 tqdm
 Janome==0.4.1
 nltk==3.6.2
+flask
