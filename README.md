@@ -51,8 +51,8 @@ python3 predict.py --path png/image.png --v v3
 
 - API 開発サーバー(Ubuntu)
 
-1. VS Codeの拡張機能である[REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)をインストールする
-1. 下のコマンドを実行した後、`test.http` ファイルの `Send Request` をクリックする
+##1. VS Codeの拡張機能である[REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)をインストールする
+##1. 下のコマンドを実行した後、`test.http` ファイルの `Send Request` をクリックする
 ```
 cd API
 python3 connect.py
