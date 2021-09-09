@@ -56,7 +56,7 @@ VS codeの拡張機能であるREST Clientインストールする
 cd API
 python3 connect.py
 ```
-その後、test.httpファイルのSend Requestをクリックする
+上のコマンドを実行した後、test.httpファイルのSend Requestをクリックする
 
 
 ## エラー対処  
