@@ -55,6 +55,7 @@ python3 predict.py --path png/image.png --v v3
 
 1. VS Codeの拡張機能である[REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)をインストールする
 1. 下のコマンドを実行した後、`test.http` ファイルの `Send Request` をクリックする
+1. `text.http`ののキーの名前が`url:`の値を、自分が保存したい写真のURLに変えることで写真を保存することができる
 ```
 cd API
 python connect.py
@@ -64,6 +65,7 @@ python connect.py
 
 1. VS Codeの拡張機能である[REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)をインストールする
 1. 下のコマンドを実行した後、`test.http` ファイルの `Send Request` をクリックする
+1. `text.http`のキーの名前が`url:`の値を、自分が保存したい写真のURLに変えることで写真を保存することができる
 ```
 cd API
 python3 connect.py
