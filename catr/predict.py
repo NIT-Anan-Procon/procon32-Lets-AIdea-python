@@ -4,6 +4,8 @@ from transformers import BertTokenizer
 from PIL import Image
 import argparse
 
+import sys
+sys.path.append('../catr')
 from models import caption
 from datasets import coco, utils
 from configuration import Config
@@ -18,7 +20,7 @@ def pre():
     global cap_mask
     global caption
     
-    image_path = "catr/png/image.png" 
+    image_path = "./../catr/png/image.png" 
 
     config = Config()
 
@@ -38,7 +40,7 @@ def pre():
     output = evaluate()
     result = tokenizer.decode(output[0].tolist(), skip_special_tokens=True)
     #result = tokenizer.decode(output[0], skip_special_tokens=True)
-    print(NGword.NGword(result.capitalize()))
+    return(NGword.NGword(result.capitalize()))
 
 
 def create_caption_and_mask(start_token, max_length):

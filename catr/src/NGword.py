@@ -10,12 +10,8 @@ def NGword(text):
     words = {}
     l = list()
 
-<<<<<<< HEAD
-	words["sentence"] = sentence
-=======
     # Run only the first time
     # nltk.download('all')
->>>>>>> main
 
     #英語のNGワードを返す
     """

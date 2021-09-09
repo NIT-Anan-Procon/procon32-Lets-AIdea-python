@@ -1,23 +1,23 @@
-import json
+# import json
 from flask import Flask, request, jsonify  # flaskを使って実装
 
 import sys
 sys.path.append('../')
 from url_image.url_image import image
 
+import sys
+sys.path.append('../')
+from catr import predict
+
 app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False  # jsonの文字化け防止
 
 
-@app.route("/~kurabuchi/procon32_Lets_AIdea_python/API/connect.py")
+@app.route("/test")
 def NGword():
     url = request.json["url"]
     image(url)
-    sample = {
-        'url':url,
-        'word':'あいうえお'
-    }
-    return jsonify(sample)
+    return jsonify(predict.pre())
 
 
 if __name__ == "__main__":

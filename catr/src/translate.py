@@ -13,7 +13,6 @@ DEEPL_TRANSLATE_EP = "https://api.deepl.com/v2/translate"
 
 
 def translate(text):
-    print("aiueo")
     s_lang = ""
     t_lang = "JA"
     headers = {"Content-Type": "application/x-www-form-urlencoded; utf-8"}
