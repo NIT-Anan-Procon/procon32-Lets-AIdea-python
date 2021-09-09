@@ -49,6 +49,16 @@ cd catr
 python3 predict.py --path png/image.png --v v3
 ```
 
+- API 開発サーバー(Ubuntu)
+
+VS codeの拡張機能であるREST Clientインストールする
+```
+cd API
+python3 connect.py
+```
+その後、test.httpファイルのSend Requestをクリックする
+
+
 ## エラー対処  
 
 - pipコマンド実行時に、 `error: Microsoft Visual C++ 14.0 is required.` エラーが出た場合は、[ここ](https://visualstudio.microsoft.com/ja/downloads/)からVisual Studioをダウンロード
