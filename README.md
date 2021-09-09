@@ -30,23 +30,22 @@ pip3 install -r requirements.txt
 
 ## 実行準備
 
-procon32_Lets_AIdea_python\catrにconfig.jsonを追加
-中身のコードはPython班に聞いてください
+1. procon32_Lets_AIdea_python\catrにconfig.jsonを追加  
+1. 中身のコードはPython班に聞いてく  
+1. コードをconfig.jsonに記述  
 
 ## 実行方法
 
 - ローカル
 
 ```
-cd catr
-python predict.py --path png/image.png --v v3
+python catr/start.py
 ```
 
 - 開発サーバー(Ubuntu)
 
 ```
-cd catr
-python3 predict.py --path png/image.png --v v3
+python3 catr/start.py
 ```
 
 ## エラー対処  
