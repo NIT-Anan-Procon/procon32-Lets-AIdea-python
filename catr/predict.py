@@ -11,43 +11,34 @@ import os
 
 from src import NGword
 
-parser = argparse.ArgumentParser(description='Image Captioning')
-parser.add_argument('--path', type=str, help='path to image', required=True)
-parser.add_argument('--v', type=str, help='version', default='v3')
-parser.add_argument('--checkpoint', type=str, help='checkpoint path', default=None)
-args = parser.parse_args()
-image_path = args.path
-version = args.v
-checkpoint_path = args.checkpoint
+def pre():
+    global model 
+    global config
+    global image
+    global cap_mask
+    global caption
+    
+    image_path = "catr/png/image.png" 
 
-config = Config()
+    config = Config()
 
-if version == 'v1':
-    model = torch.hub.load('saahiluppal/catr', 'v1', pretrained=True)
-elif version == 'v2':
-    model = torch.hub.load('saahiluppal/catr', 'v2', pretrained=True)
-elif version == 'v3':
     model = torch.hub.load('saahiluppal/catr', 'v3', pretrained=True)
-else:
-    print("Checking for checkpoint.")
-    if checkpoint_path is None:
-      raise NotImplementedError('No model to chose from!')
-    else:
-      if not os.path.exists(checkpoint_path):
-        raise NotImplementedError('Give valid checkpoint path')
-      print("Found checkpoint! Loading!")
-      model,_ = caption.build_model(config)
-      print("Loading Checkpoint...")
-      checkpoint = torch.load(checkpoint_path, map_location='cpu')
-      model.load_state_dict(checkpoint['model'])
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
-start_token = tokenizer.convert_tokens_to_ids(tokenizer._cls_token)
-end_token = tokenizer.convert_tokens_to_ids(tokenizer._sep_token)
+    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
-image = Image.open(image_path)
-image = coco.val_transform(image)
-image = image.unsqueeze(0)
+    start_token = tokenizer.convert_tokens_to_ids(tokenizer._cls_token)
+    end_token = tokenizer.convert_tokens_to_ids(tokenizer._sep_token)
+
+    image = Image.open(image_path)
+    image = coco.val_transform(image)
+    image = image.unsqueeze(0)
+
+    caption, cap_mask = create_caption_and_mask(start_token, config.max_position_embeddings)
+
+    output = evaluate()
+    result = tokenizer.decode(output[0].tolist(), skip_special_tokens=True)
+    #result = tokenizer.decode(output[0], skip_special_tokens=True)
+    print(NGword.NGword(result.capitalize()))
 
 
 def create_caption_and_mask(start_token, max_length):
@@ -58,10 +49,6 @@ def create_caption_and_mask(start_token, max_length):
     mask_template[:, 0] = False
 
     return caption_template, mask_template
-
-
-caption, cap_mask = create_caption_and_mask(
-    start_token, config.max_position_embeddings)
 
 
 @torch.no_grad()
@@ -79,9 +66,3 @@ def evaluate():
         cap_mask[:, i+1] = False
 
     return caption
-
-
-output = evaluate()
-result = tokenizer.decode(output[0].tolist(), skip_special_tokens=True)
-#result = tokenizer.decode(output[0], skip_special_tokens=True)
-print(NGword.NGword(result.capitalize(),1))
