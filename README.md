@@ -31,7 +31,7 @@ pip3 install -r requirements.txt
 ## 実行準備
 
 1. procon32_Lets_AIdea_python\catrにconfig.jsonを追加  
-1. 中身のコードはPython班に聞いてく  
+1. 中身のコードをPython班に聞く  
 1. コードをconfig.jsonに記述  
 
 ## 実行方法
@@ -39,7 +39,7 @@ pip3 install -r requirements.txt
 - ローカル
 
 ```
-python catr/start.py
+python3 catr/start.py
 ```
 
 - 開発サーバー(Ubuntu)
