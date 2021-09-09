@@ -1,7 +1,8 @@
 import spacy
 
 
-def parse_document(sentence, nlp):
+def parse_document(sentence):
+    nlp = spacy.load("ja_ginza")
     doc = nlp(sentence)
     tokens = []
 
@@ -18,7 +19,3 @@ def parse_document(sentence, nlp):
             subject_list.append(f"{token.lemma_}")
 
     return subject_list
-
-
-nlp = spacy.load("ja_ginza")
-print(parse_document("犬が草原を駆け回っている。", nlp))
