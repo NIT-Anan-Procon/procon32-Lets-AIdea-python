@@ -4,6 +4,7 @@ from janome.tokenizer import Tokenizer
 from janome.tokenfilter import CompoundNounFilter, POSKeepFilter
 
 from src import translate
+from src.subject import parse_document
 
 
 def NGword(text):
@@ -40,5 +41,6 @@ def NGword(text):
             #words[number] = word
     words["sentence"] = sentence
     words["NGword"] = l
+    print(parse_document(sentence))
 
     return words
