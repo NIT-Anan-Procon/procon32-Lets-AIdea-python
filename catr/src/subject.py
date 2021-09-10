@@ -19,8 +19,7 @@ def parse_document(sentence):
             subject_list.append(f"{token.lemma_}")
 
         #複数の主語となった場合DeepLだと、あとの主語の方が求めている言葉となりやすいのでここでは配列の最後の主語を返している
-        subject_last = "主語は検出できませんでした"
-        for subject in subject_list:
-            subject_last = subject
+        subject_last = None if not subject_list else subject_list[-1]
+
 
     return subject_last
