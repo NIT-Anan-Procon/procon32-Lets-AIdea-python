@@ -48,6 +48,29 @@ python3 catr/start.py
 python3 catr/start.py
 ```
 
+## API 実行方法
+
+- ローカル
+
+1. VS Codeの拡張機能である[REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)をインストールする
+1. 下のコマンドを実行した後、`test.http` ファイルの `Send Request` をクリックする
+1. `text.http`ファイルの中で、キーの名前が`url`である値を、自分が保存したい写真のURLに変えることで写真を保存することができ、NGワードと日本語文がjson形式で返される
+```
+cd API
+python connect.py
+```
+
+- 開発サーバー(Ubuntu)
+
+1. VS Codeの拡張機能である[REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)をインストールする
+1. 下のコマンドを実行した後、`test.http` ファイルの `Send Request` をクリックする
+1. `text.http`ファイルの中で、キーの名前が`url`である値を、自分が保存したい写真のURLに変えることで写真を保存することができ、NGワードと日本語文がjson形式で返される
+```
+cd API
+python3 connect.py
+```
+
+
 ## エラー対処  
 
 - pipコマンド実行時に、 `error: Microsoft Visual C++ 14.0 is required.` エラーが出た場合は、[ここ](https://visualstudio.microsoft.com/ja/downloads/)からVisual Studioをダウンロード
