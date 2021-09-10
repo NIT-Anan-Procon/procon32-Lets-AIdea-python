@@ -46,6 +46,7 @@ def NGword(text):
         s = translate.word(l[-1])
 
     words["NGword"] = l
+    print(parse_document(sentence))
 
     words['subject'] = s
     words['AI'] = sentence
