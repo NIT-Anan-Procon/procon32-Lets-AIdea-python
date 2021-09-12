@@ -1,0 +1,3 @@
+import synonym
+
+synonym.syno()
