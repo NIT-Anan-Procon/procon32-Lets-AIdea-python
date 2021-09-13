@@ -28,7 +28,7 @@ def NGword(text):
                     # words[number] = pos[j][0]
     """
 
-    sentence = translate.translate(text)
+    sentence = translate.sentence(text)
     tokenizer = Tokenizer()
     a = Analyzer(token_filters=[CompoundNounFilter(), POSKeepFilter(["名詞", "形容詞"])])
     # i = 0
@@ -39,8 +39,16 @@ def NGword(text):
             #i = i + 1
             #number = "NGword" + (str)(i)
             #words[number] = word
-    words["sentence"] = sentence
+    
+    if parse_document(sentence) is not None:
+        s = translate.word(parse_document(sentence))
+    else:
+        s = translate.word(l[-1])
+
     words["NGword"] = l
     print(parse_document(sentence))
+
+    words['subject'] = s
+    words['AI'] = sentence
 
     return words
