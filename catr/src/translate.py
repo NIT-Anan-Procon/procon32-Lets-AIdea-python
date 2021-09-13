@@ -2,6 +2,7 @@ import json
 import os
 import urllib.parse
 import urllib.request
+from googletrans import Translator
 
 with open(
     os.path.dirname(os.path.abspath(__file__)) + "/../config.json", encoding="utf_8_sig"
@@ -12,7 +13,7 @@ AUTH_KEY = config["auth_key"]
 DEEPL_TRANSLATE_EP = "https://api.deepl.com/v2/translate"
 
 
-def translate(text):
+def sentence(text):
     s_lang = ""
     t_lang = "JA"
     headers = {"Content-Type": "application/x-www-form-urlencoded; utf-8"}
@@ -37,3 +38,8 @@ def translate(text):
             return sentence_aft
     except urllib.error.HTTPError as e:
         print(e)
+
+def word(text):
+    translator = Translator()
+    trans_en = translator.translate(text=text, src="ja", dest="en").text
+    return(trans_en)
