@@ -1,11 +1,13 @@
-from flask import Flask, request, jsonify  # flaskを使って実装
-
 import sys
-sys.path.append('../')
+
+from flask import Flask, jsonify, request  # flaskを使って実装
+
+sys.path.append("../")
+import sys
+
 from url_image.url_image import image
 
-import sys
-sys.path.append('../')
+sys.path.append("../")
 from catr import predict
 
 app = Flask(__name__)

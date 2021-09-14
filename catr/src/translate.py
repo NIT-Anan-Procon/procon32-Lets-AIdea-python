@@ -2,6 +2,7 @@ import json
 import os
 import urllib.parse
 import urllib.request
+
 from googletrans import Translator
 
 with open(
@@ -39,7 +40,8 @@ def sentence(text):
     except urllib.error.HTTPError as e:
         print(e)
 
+
 def word(text):
     translator = Translator()
     trans_en = translator.translate(text=text, src="ja", dest="en").text
-    return(trans_en)
+    return trans_en

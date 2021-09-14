@@ -1,15 +1,13 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
-import torch
-
 import math
 import sys
-import tqdm
 
+import torch
+import tqdm
 from models import utils
 
 
-def train_one_epoch(model, criterion, data_loader,
-                    optimizer, device, epoch, max_norm):
+def train_one_epoch(model, criterion, data_loader, optimizer, device, epoch, max_norm):
     model.train()
     criterion.train()
 
@@ -28,7 +26,7 @@ def train_one_epoch(model, criterion, data_loader,
             epoch_loss += loss_value
 
             if not math.isfinite(loss_value):
-                print(f'Loss is {loss_value}, stopping training')
+                print(f"Loss is {loss_value}, stopping training")
                 sys.exit(1)
 
             optimizer.zero_grad()
@@ -40,6 +38,7 @@ def train_one_epoch(model, criterion, data_loader,
             pbar.update(1)
 
     return epoch_loss / total
+
 
 @torch.no_grad()
 def evaluate(model, criterion, data_loader, device):
@@ -61,5 +60,5 @@ def evaluate(model, criterion, data_loader, device):
             validation_loss += loss.item()
 
             pbar.update(1)
-        
+
     return validation_loss / total

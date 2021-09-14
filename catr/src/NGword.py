@@ -1,8 +1,7 @@
 import nltk
 from janome.analyzer import Analyzer
-from janome.tokenizer import Tokenizer
 from janome.tokenfilter import CompoundNounFilter, POSKeepFilter
-
+from janome.tokenizer import Tokenizer
 from src import translate
 from src.subject import parse_document
 
@@ -14,7 +13,7 @@ def NGword(text):
     # Run only the first time
     # nltk.download('all')
 
-    #英語のNGワードを返す
+    # 英語のNGワードを返す
     """
     if lang == 0:
         morph = nltk.word_tokenize(text)
@@ -36,10 +35,10 @@ def NGword(text):
         word = (token.base_form).replace(".", "")
         if word not in words.values():
             l.append(word)
-            #i = i + 1
-            #number = "NGword" + (str)(i)
-            #words[number] = word
-    
+            # i = i + 1
+            # number = "NGword" + (str)(i)
+            # words[number] = word
+
     if parse_document(sentence) is not None:
         s = translate.word(parse_document(sentence))
     else:
@@ -48,7 +47,7 @@ def NGword(text):
     words["NGword"] = l
     print(parse_document(sentence))
 
-    words['subject'] = s
-    words['AI'] = sentence
+    words["subject"] = s
+    words["AI"] = sentence
 
     return words
