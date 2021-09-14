@@ -4,5 +4,5 @@ content-type: application/json
 {
     "url": "https://images.unsplash.com/photo-1562569633-622303bafef5?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb",
     "subject": 1,
-    "synonym": 0
+    "synonym": 1
 }

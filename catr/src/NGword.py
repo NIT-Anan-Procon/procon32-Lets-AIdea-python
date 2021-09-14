@@ -7,7 +7,7 @@ from src import translate
 from src.subject import parse_document
 
 
-def NGword(text):
+def NGword(text, subject, synonym):
     words = {}
     l = list()
 
@@ -40,15 +40,22 @@ def NGword(text):
             # number = "NGword" + (str)(i)
             # words[number] = word
 
-    if parse_document(sentence) is not None:
-        s = translate.word(parse_document(sentence))
-    else:
-        s = translate.word(l[-1])
+    if subject == 1:
+        if parse_document(sentence) is not None:
+            s = translate.word(parse_document(sentence))
+        else:
+            s = translate.word(l[-1])
 
-    words["NGword"] = l
-    # print(parse_document(sentence))
+        words["NGword"] = l
+        # print(parse_document(sentence))
+        words["subject"] = s
 
-    words["subject"] = s
+    l2 = list()
+    if synonym == 1:
+        for word2 int l:
+            l2  = pre(word2)
+        words["synonym"] = l2
+
     words["AI"] = sentence
 
     return words

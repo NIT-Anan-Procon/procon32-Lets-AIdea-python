@@ -13,7 +13,7 @@ import os
 
 from src import NGword
 
-def pre():
+def pre(subject, synonym):
     global model 
     global config
     global image
@@ -40,7 +40,7 @@ def pre():
     output = evaluate()
     result = tokenizer.decode(output[0].tolist(), skip_special_tokens=True)
     #result = tokenizer.decode(output[0], skip_special_tokens=True)
-    return(NGword.NGword(result.capitalize()))
+    return(NGword.NGword(result.capitalize(), subject, synonym))
 
 
 def create_caption_and_mask(start_token, max_length):
