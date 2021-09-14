@@ -1,4 +1,4 @@
-import wordnet
+from src import wordnet
 
 def syno(word):
     global list

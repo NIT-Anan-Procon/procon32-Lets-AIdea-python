@@ -49,11 +49,11 @@ def NGword(text, subject, synonym):
         # print(parse_document(sentence))
         words["subject"] = s
 
-    l2 = list()
-    if synonym == 1:
-        for word2 in l:
-            l2  = syno(word2)
-        words["synonym"] = l2
+    # l2 = list()
+    # if synonym == 1:
+    #     for word2 in l:
+    #         l2.append(syno(word2))
+    #     words["synonym"] = l2
 
     words["AI"] = sentence
     words["NGword"] = l
