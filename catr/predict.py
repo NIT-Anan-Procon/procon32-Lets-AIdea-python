@@ -9,9 +9,11 @@ sys.path.append("../catr")
 import os
 
 from configuration import Config
-from datasets import coco, utils
+from datasets import coco
 from models import caption
-from src import NGword
+
+sys.path.append("../src")
+import ng_word
 
 
 def pre():
@@ -43,7 +45,7 @@ def pre():
     output = evaluate()
     result = tokenizer.decode(output[0].tolist(), skip_special_tokens=True)
     # result = tokenizer.decode(output[0], skip_special_tokens=True)
-    return NGword.NGword(result.capitalize())
+    return ng_word.ng_word(result.capitalize())
 
 
 def create_caption_and_mask(start_token, max_length):
