@@ -3,7 +3,7 @@ import wordnet
 
 def syno(word):
     global list
-    synonym = wordnet.getSynonym(word)
+    synonym = wordnet.get_synonym(word)
     ng_word_list = list(synonym.values())
     try:
         # NGワードが含まれていない類義語を配列で返す

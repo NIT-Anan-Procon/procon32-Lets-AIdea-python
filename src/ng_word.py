@@ -41,10 +41,10 @@ def ng_word(text, subject, synonym):
         for word2 in ng_word_list:
             l2.append(syno(word2))
         words["synonym"] = l2
+    ここまで
+    """
 
     words["AI"] = sentence
     words["NGword"] = ng_word_list
-    ここまで
-    """
 
     return words
