@@ -45,17 +45,16 @@ def NGword(text, subject, synonym):
             s = translate.word(parse_document(sentence))
         else:
             s = translate.word(l[-1])
-
-        words["NGword"] = l
         # print(parse_document(sentence))
         words["subject"] = s
 
-    l2 = list()
-    if synonym == 1:
-        for word2 int l:
-            l2  = pre(word2)
-        words["synonym"] = l2
+    # l2 = list()
+    # if synonym == 1:
+    #     for word2 in l:
+    #         l2  = pre(word2)
+    #     words["synonym"] = l2
 
     words["AI"] = sentence
+    words["NGword"] = l
 
     return words
