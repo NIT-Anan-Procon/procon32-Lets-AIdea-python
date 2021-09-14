@@ -1,15 +1,14 @@
-import torch
-from torch.utils.data import DataLoader
+import os
+import sys
+import time
 
 import numpy as np
-import time
-import sys
-import os
-
-from models import utils, caption
-from datasets import coco
+import torch
 from configuration import Config
-from engine import train_one_epoch, evaluate
+from datasets import coco
+from engine import evaluate, train_one_epoch
+from models import caption, utils
+from torch.utils.data import DataLoader
 
 
 def finetune(config):

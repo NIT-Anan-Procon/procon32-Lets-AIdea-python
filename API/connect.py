@@ -3,8 +3,6 @@ import sys
 from flask import Flask, jsonify, request  # flaskを使って実装
 
 sys.path.append("../")
-# import sys
-# sys.path.append('../')
 from catr import predict
 from url_image.url_image import image
 
@@ -13,7 +11,7 @@ app.config["JSON_AS_ASCII"] = False  # jsonの文字化け防止
 
 
 @app.route("/")
-def NGword():
+def ngword():
     url = request.json["url"]
     subject = request.json["subject"]
     synonym = request.json["synonym"]

@@ -1,18 +1,19 @@
-import torch
-
-from transformers import BertTokenizer
-from PIL import Image
 import argparse
-
 import sys
 
+import torch
+from PIL import Image
+from transformers import BertTokenizer
+
 sys.path.append("../catr")
-from models import caption
-from datasets import coco, utils
-from configuration import Config
 import os
 
-from src import NGword
+from configuration import Config
+from datasets import coco
+from models import caption
+
+sys.path.append("../src")
+import ng_word
 
 
 def pre(subject, synonym):

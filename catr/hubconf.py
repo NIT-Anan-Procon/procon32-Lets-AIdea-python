@@ -1,7 +1,6 @@
 import torch
-
-from models import caption
 from configuration import Config
+from models import caption
 
 dependencies = ["torch", "torchvision"]
 

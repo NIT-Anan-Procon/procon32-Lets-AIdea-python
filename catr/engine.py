@@ -1,10 +1,9 @@
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
-import torch
-
 import math
 import sys
-import tqdm
 
+import torch
+import tqdm
 from models import utils
 
 
