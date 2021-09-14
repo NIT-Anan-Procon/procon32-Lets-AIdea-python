@@ -15,7 +15,7 @@ app.config["JSON_AS_ASCII"] = False  # jsonの文字化け防止
 
 
 @app.route("/test")
-def NGword():
+def ng_word():
     url = request.json["url"]
     image(url)
     return jsonify(predict.pre())
