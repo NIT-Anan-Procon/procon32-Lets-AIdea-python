@@ -38,14 +38,16 @@ pip3 install -r requirements.txt
 
 - ローカル
 
-```
-python3 catr/start.py
+``` 
+cd catr
+python3 start.py
 ```
 
 - 開発サーバー(Ubuntu)
 
 ```
-python3 catr/start.py
+cd catr
+python3 start.py
 ```
 
 ## API 実行方法
@@ -69,7 +71,6 @@ python connect.py
 cd API
 python3 connect.py
 ```
-
 
 ## エラー対処  
 
