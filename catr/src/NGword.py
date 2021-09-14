@@ -5,6 +5,7 @@ from janome.tokenizer import Tokenizer
 
 from src import translate
 from src.subject import parse_document
+from src.synonym import syno
 
 
 def NGword(text, subject, synonym):
@@ -48,11 +49,11 @@ def NGword(text, subject, synonym):
         # print(parse_document(sentence))
         words["subject"] = s
 
-    # l2 = list()
-    # if synonym == 1:
-    #     for word2 in l:
-    #         l2  = pre(word2)
-    #     words["synonym"] = l2
+    l2 = list()
+    if synonym == 1:
+        for word2 in l:
+            l2  = syno(word2)
+        words["synonym"] = l2
 
     words["AI"] = sentence
     words["NGword"] = l

@@ -8,7 +8,7 @@ import sys, sqlite3
 from collections import namedtuple
 from pprint import pprint
 
-conn = sqlite3.connect("./wnjpn.db")
+conn = sqlite3.connect("../catr/src/wnjpn.db")
 
 Word = namedtuple('Word', 'wordid lang lemma pron pos')
 
@@ -16,7 +16,7 @@ def getWords(lemma):
     cur = conn.execute("select * from word where lemma=?", (lemma,))
     return [Word(*row) for row in cur]
 
- 
+
 Sense = namedtuple('Sense', 'synset wordid lang rank lexid freq src')
 
 def getSenses(word):
