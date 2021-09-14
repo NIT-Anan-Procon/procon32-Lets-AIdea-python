@@ -2,7 +2,6 @@ import requests
 
 
 def image(url):
-    # url = "https://news.walkerplus.com/article/148584/844539_615.jpg"
     file_name = "./../catr/png/image.png"
     response = requests.get(url)
     image = response.content

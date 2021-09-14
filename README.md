@@ -26,6 +26,7 @@ mkdir $HOME/tmp
 export TMPDIR=$HOME/tmp
 pip3 install wheel
 pip3 install -r requirements.txt
+pre-commit install
 ```
 
 ## 実行準備
@@ -38,14 +39,16 @@ pip3 install -r requirements.txt
 
 - ローカル
 
-```
-python3 catr/start.py
+``` 
+cd catr
+python3 start.py
 ```
 
 - 開発サーバー(Ubuntu)
 
 ```
-python3 catr/start.py
+cd catr
+python3 start.py
 ```
 
 ## API 実行方法
@@ -70,6 +73,13 @@ cd API
 python3 connect.py
 ```
 
+## pre-commit について
+
+- `pre-commit install` を実行すると git hook に pre-commit が追加されます。
+- `git commit` 時にコードのチェックが走ります
+- すべての項目を `Passed` しないとコミットが通りません
+- エラーの修正後、`git add` をし再度 `git commit` をしてください
+- コードのチェックをパスしたあとにコード整形がかかります。このとき変更がある場合はコミットされないので、`git add` をし再度 `git commit` をしてください
 
 ## エラー対処  
 
