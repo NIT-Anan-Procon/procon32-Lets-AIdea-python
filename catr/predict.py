@@ -16,14 +16,14 @@ sys.path.append("../src")
 import ng_word
 
 
-def pre(subject, synonym):
+def pre(subject, synonym, image_name):
     global model
     global config
     global image
     global cap_mask
     global caption
 
-    image_path = "./../catr/png/image.png"
+    image_path = image_name
 
     config = Config()
 
@@ -45,6 +45,7 @@ def pre(subject, synonym):
     output = evaluate()
     result = tokenizer.decode(output[0].tolist(), skip_special_tokens=True)
     # result = tokenizer.decode(output[0], skip_special_tokens=True)
+    os.remove(image_name)
     return ng_word.ng_word(result.capitalize(), subject, synonym)
 
 

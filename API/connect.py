@@ -16,9 +16,9 @@ def ngword():
     url = request.json["url"]
     subject = request.json["subject"]
     synonym = request.json["synonym"]
-    image(url)
+    image_name = image(url)
     time.sleep(1)
-    return jsonify(predict.pre(subject, synonym))
+    return jsonify(predict.pre(subject, synonym, image_name))
 
 
 if __name__ == "__main__":
