@@ -3,6 +3,7 @@ from janome.tokenfilter import CompoundNounFilter, POSKeepFilter
 
 import translate
 from subject import parse_document
+from synonym import syno
 
 
 def ng_word(text, subject, synonym):
@@ -28,23 +29,27 @@ def ng_word(text, subject, synonym):
             ng_word_list.append(word)
 
     if subject == 1:
-        if parse_document(sentence) is not None:
-            s = translate.word(parse_document(sentence))
-        else:
-            s = translate.word(ng_word_list[-1])
-        words["subject"] = s
+        words["subject"] = subject_preparation(sentence, ng_word_list)
 
-    """
-    以下のコードはまだ使用できない ここから
-    l2 = list()
     if synonym == 1:
-        for word2 in ng_word_list:
-            l2.append(syno(word2))
-        words["synonym"] = l2
-    ここまで
-    """
+        words["synonym"] = synonym_preparation(ng_word_list)
 
     words["AI"] = sentence
     words["NGword"] = ng_word_list
-
     return words
+
+
+def subject_preparation(sentence, ng_word_list):
+    s = (
+        translate.word(parse_document(sentence))
+        if parse_document(sentence) is not None
+        else translate.word(ng_word_list[-1])
+    )
+    return s
+
+
+def synonym_preparation(ng_word_list):
+    l_syno = list()
+    for word2 in ng_word_list:
+        l_syno.append(syno(word2))
+    return l_syno

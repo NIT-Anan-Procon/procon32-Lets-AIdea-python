@@ -1,4 +1,5 @@
 import sys
+import time
 
 from flask import Flask, jsonify, request  # flaskを使って実装
 
@@ -10,12 +11,13 @@ app = Flask(__name__)
 app.config["JSON_AS_ASCII"] = False  # jsonの文字化け防止
 
 
-@app.route("/")
+@app.route("/test", methods=["POST"])
 def ngword():
     url = request.json["url"]
     subject = request.json["subject"]
     synonym = request.json["synonym"]
     image(url)
+    time.sleep(1)
     return jsonify(predict.pre(subject, synonym))
 
 
