@@ -1,5 +1,6 @@
 import argparse
 import sys
+from functools import lru_cache
 
 import torch
 from PIL import Image
@@ -16,6 +17,7 @@ sys.path.append("../src")
 import ng_word
 
 
+@lru_cache(maxsize=None)
 def pre(subject, synonym, image_name):
     global model
     global config
