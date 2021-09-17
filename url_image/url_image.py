@@ -25,7 +25,6 @@ def random_name():
 def judge_name(image_name):
     files = glob.glob("./../catr/png/*")
     for file_name in files:
-        print(file_name)
         if file_name == image_name:
             random_name()
             break
