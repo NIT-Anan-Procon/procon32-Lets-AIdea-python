@@ -1,4 +1,4 @@
-import glob
+import pathlib
 import random
 import string
 
@@ -6,7 +6,7 @@ import requests
 
 
 def image(url):
-    image_name = random_name()
+    image_name = judge_name()
 
     response = requests.get(url)
     image = response.content
@@ -17,16 +17,22 @@ def image(url):
 
 def random_name():
     randlst = [random.choice(string.ascii_letters + string.digits) for i in range(10)]
-    image_name = "./../catr/png/"
-    image_name += "".join(randlst) + ".png"
-    return judge_name(image_name)
+    image_name = "".join(randlst) + ".png"
+    return image_name
 
 
-def judge_name(image_name):
-    files = glob.glob("./../catr/png/*")
-    for file_name in files:
-        if file_name == image_name:
-            random_name()
-            break
-        else:
-            return image_name
+def judge_name():
+    files = pathlib.Path("../catr/png/").glob("*.png")
+    image_name = random_name()
+    i = 1
+    while i == 1:
+        for file_name in files:
+            if file_name.name == image_name:
+                image_name = random_name()
+                i = 1
+                break
+            else:
+                i = 0
+
+    image_name_dec = "./../catr/png/" + image_name
+    return image_name_dec
