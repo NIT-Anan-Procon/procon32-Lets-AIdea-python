@@ -26,13 +26,12 @@ def judge_name():
     image_name = random_name()
     i = 1
     while i == 1:
+        i = 0
         for file_name in files:
             if file_name.name == image_name:
                 image_name = random_name()
                 i = 1
                 break
-            else:
-                i = 0
 
     image_name_dec = "./../catr/png/" + image_name
     return image_name_dec
