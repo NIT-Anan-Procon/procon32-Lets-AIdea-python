@@ -58,6 +58,7 @@ python3 start.py
 1. VS Codeの拡張機能である[REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)をインストールする
 1. 下のコマンドを実行した後、`test.http` ファイルの `Send Request` をクリックする
 1. `text.http`ファイルの中で、キーの名前が`url`である値を、自分が保存したい写真のURLに変えることで写真を保存することができ、NGワードと日本語文がjson形式で返される
+1. 同じく`text.http`ファイルの中で、キーの名前が`subject`である値を、`1`にすればキーワードが、キーの名前が`synonym`である値を、`1`にすれば類義語が返ってくる
 ```
 cd API
 python connect.py
@@ -68,6 +69,7 @@ python connect.py
 1. VS Codeの拡張機能である[REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)をインストールする
 1. 下のコマンドを実行した後、`test.http` ファイルの `Send Request` をクリックする
 1. `text.http`ファイルの中で、キーの名前が`url`である値を、自分が保存したい写真のURLに変えることで写真を保存することができ、NGワードと日本語文がjson形式で返される
+1. 同じく`text.http`ファイルの中で、キーの名前が`subject`である値を、`1`にすればキーワードが、キーの名前が`synonym`である値を、`1`にすれば類義語が返ってくる
 ```
 cd API
 python3 connect.py
