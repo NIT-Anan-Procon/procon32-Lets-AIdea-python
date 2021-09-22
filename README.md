@@ -33,12 +33,15 @@ pip3 install -r requirements.txt
 1. procon32_Lets_AIdea_python\catrにconfig.jsonを追加  
 1. 中身のコードをPython班に聞く  
 1. コードをconfig.jsonに記述  
+  
+類義語   
 1. 次のサイトからlhaplusをインストール[ラプラスはこちら](https://forest.watch.impress.co.jp/library/software/lhaplus/)  
-1. 以下のサイトからJapanese Wordnet and English WordNet in an sqlite3 databaseを押してwnjpn.db.gzをインストールしLhaplusを使って解凍
+2. 以下のサイトからJapanese Wordnet and English WordNet in an sqlite3 databaseを押してwnjpn.db.gzをインストールしLhaplusを使って解凍
 [データベースのインストールはこちら](http://compling.hss.ntu.edu.sg/wnja/)  
-1. 以下のサイトからsqlite-tools-win32-x86-3360000.zipをダウンロード
+3. 以下のサイトからsqlite-tools-win32-x86-3360000.zipをダウンロード
 [sqlite3のインストールはこちら](https://www.sqlite.org/download.html)  
- 開発サーバーではsqlite3は入っているのでインストールはローカルのみでよい。
+ 開発サーバーではsqlite3は入っているのでインストールはローカルのみでよい。  
+ wnjpn.dbはsrcのなかにいれる
 
 ## 実行方法
 
