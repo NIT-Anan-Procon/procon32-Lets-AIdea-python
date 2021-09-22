@@ -34,6 +34,7 @@ pre-commit install
 1. procon32_Lets_AIdea_python\catrにconfig.jsonを追加  
 1. 中身のコードをPython班に聞く  
 1. コードをconfig.jsonに記述  
+1. catr内にpngフォルダを作成する
 
 ## 実行方法
 
