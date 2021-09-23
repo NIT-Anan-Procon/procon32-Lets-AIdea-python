@@ -58,6 +58,7 @@ preshed==3.0.5
 pycodestyle==2.7.0
 pydantic==1.8.2
 pyflakes==2.3.1
+pykakasi==2.2.1
 pyparsing==2.4.7
 pysen==0.9.1
 PyYAML==5.4.1
