@@ -1,5 +1,6 @@
 import argparse
 import sys
+from functools import lru_cache
 
 import torch
 from PIL import Image
@@ -16,14 +17,15 @@ sys.path.append("../src")
 import ng_word
 
 
-def pre():
+@lru_cache(maxsize=None)
+def pre(subject, synonym, image_name):
     global model
     global config
     global image
     global cap_mask
     global caption
 
-    image_path = "./../catr/png/image.png"
+    image_path = image_name
 
     config = Config()
 
@@ -45,7 +47,8 @@ def pre():
     output = evaluate()
     result = tokenizer.decode(output[0].tolist(), skip_special_tokens=True)
     # result = tokenizer.decode(output[0], skip_special_tokens=True)
-    return ng_word.ng_word(result.capitalize())
+    os.remove(image_name)
+    return ng_word.ng_word(result.capitalize(), subject, synonym)
 
 
 def create_caption_and_mask(start_token, max_length):

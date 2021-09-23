@@ -140,4 +140,9 @@ cython_debug/
 .DS_Store
 .vs/
 config.json
+<<<<<<< HEAD
+=======
+
+# End of https://www.toptal.com/developers/gitignore/api/python
+>>>>>>> e0756c8ddd05fc0c3e10ec50c59e16e9211496ca
 *.db

@@ -9,7 +9,7 @@ import sys
 from collections import namedtuple
 from pprint import pprint
 
-conn = sqlite3.connect("./wnjpn.db")
+conn = sqlite3.connect("./../src/wnjpn.db", check_same_thread=False)
 
 Word = namedtuple("Word", "wordid lang lemma pron pos")
 
