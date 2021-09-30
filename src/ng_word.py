@@ -25,7 +25,7 @@ def ng_word(text, subject, synonym):
     a = Analyzer(token_filters=[CompoundNounFilter(), POSKeepFilter(["名詞", "形容詞"])])
     for token in a.analyze(sentence):
         word = (token.base_form).replace(".", "")
-        if word not in words.values():
+        if word not in ng_word_list:
             ng_word_list.append(word)
 
     if subject == 1:
