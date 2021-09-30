@@ -1,0 +1,8 @@
+POST http://localhost:5000/test HTTP/1.1
+content-type: application/json
+
+{
+    "url": "https://images.unsplash.com/photo-1566487097168-e91a4f38bee2?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb",
+    "subject": 1,
+    "synonym": 1
+}
